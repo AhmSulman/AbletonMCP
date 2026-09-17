@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Runtime / local artifacts
+mcp_server.log
+generated-images/
+current.txt
+
+# Local machine config (contains absolute local paths / personal permission grants)
+.mcp.json
+.claude/
+
+# OS
+Thumbs.db
+.DS_Store
