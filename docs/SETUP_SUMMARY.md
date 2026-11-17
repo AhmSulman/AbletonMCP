@@ -26,7 +26,6 @@ Enhanced with APC40 tools:
 
 ### 4. **Documentation** ✅
 - **APC40_SETUP.md** — Comprehensive hardware/software setup guide
-- **Updated readme.txt** — Quick reference for all controllers
 - **start_mcp_server.bat** — One-click launcher script
 
 ---
@@ -38,7 +37,7 @@ Enhanced with APC40 tools:
 Copy AbletonMCP/ folder to:
 C:\Users\<username>\Documents\Ableton\User Library\Remote Scripts\
 ```
-✅ Already at: `c:\Users\ahmed\Desktop\AbletonMCP\AbletonMCP\`
+✅ Already at: `<path-to-repo>\AbletonMCP\`
 
 ### Step 2: Configure Ableton
 ```
@@ -51,11 +50,11 @@ Ableton Live → Preferences → MIDI
 
 ### Step 3: Start MCP Server
 ```bash
-Double-click: c:\Users\ahmed\Desktop\AbletonMCP\start_mcp_server.bat
+Double-click: <path-to-repo>\start_mcp_server.bat
 ```
 Or manually:
 ```bash
-cd C:\Users\ahmed\Desktop\AbletonMCP
+cd <path-to-repo>
 .venv\Scripts\python mcp_server.py
 ```
 

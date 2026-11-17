@@ -1,10 +1,17 @@
 # AbletonMCP
 
+![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=flat-square&logo=python&logoColor=white)
+![MCP](https://img.shields.io/badge/Model_Context_Protocol-191919?style=flat-square&logo=anthropic&logoColor=white)
+![Ableton Live](https://img.shields.io/badge/Ableton_Live_12-000?style=flat-square&logo=abletonlive&logoColor=white)
+![Platform](https://img.shields.io/badge/platform-Windows-0078D4?style=flat-square&logo=windows&logoColor=white)
+
 Control a live Ableton Live session from Claude (or any [MCP](https://modelcontextprotocol.io)-compatible client) — read session state, create tracks and clips, write MIDI, generate drum patterns, and drive hardware controllers (Akai APC40 Mk2, Akai MPD218, M-Audio Oxygen 49), all through natural-language tool calls.
 
 > "Generate a funk drum pattern on track 0, slot 1 at complexity 0.7 and launch it."
 > "Set tempo to 95 BPM."
 > "Read the pads I'm holding on the APC40 and turn them into a clip."
+
+<!-- Demo: add a GIF or screenshot here, e.g. docs/demo.gif -->
 
 ## How it works
 
@@ -61,9 +68,10 @@ AbletonMCP/
 ├── mcp_server.py                ← the MCP server exposing ableton_* tools to Claude
 ├── start_mcp_server.bat         ← convenience launcher (activates venv, runs server, tails the log)
 ├── requirements.txt
-├── APC40_SETUP.md                ← deep-dive hardware/software setup guide for the APC40 Mk2
-├── SETUP_SUMMARY.md              ← condensed setup + quick-test checklist
-└── MPD218_Pro_Guide.pdf/.html    ← MPD218 hardware reference and mapping cheat sheet
+└── docs/
+    ├── APC40_SETUP.md            ← deep-dive hardware/software setup guide for the APC40 Mk2
+    ├── SETUP_SUMMARY.md          ← condensed setup + quick-test checklist
+    └── MPD218_Pro_Guide.pdf/.html ← MPD218 hardware reference and mapping cheat sheet
 ```
 
 ## Setup
@@ -170,7 +178,16 @@ GM drum pitches used by the clip tools: `36`=kick, `38`=snare, `42`=closed hat, 
 | Akai APC40 Mk2 | 8 rotary knobs (CC 16–23) | Assignable controls |
 | Akai APC40 Mk2 | Shift / Bank buttons | Navigation and mode selection |
 
-Oxygen 49 transport CC numbers vary by firmware — if buttons don't respond, update `OXYGEN49_TRANSPORT_CCS` in `AbletonMCP/MidiMap.py`. See `APC40_SETUP.md` and `MPD218_Pro_Guide.pdf` for full hardware setup walkthroughs.
+Oxygen 49 transport CC numbers vary by firmware — if buttons don't respond, update `OXYGEN49_TRANSPORT_CCS` in `AbletonMCP/MidiMap.py`. See [`docs/APC40_SETUP.md`](docs/APC40_SETUP.md) and [`docs/MPD218_Pro_Guide.pdf`](docs/MPD218_Pro_Guide.pdf) for full hardware setup walkthroughs.
+
+## Status
+
+Working today: session control, track and clip editing, MIDI note writing, preset and algorithmic drum patterns, and the controller mappings above. Clip tools write to **Session view**.
+
+Known limits:
+- Windows-first: the launcher and paths assume Windows; the Python code itself is portable.
+
+Next: turning the pattern generator into a real generative engine (bass and melody that follow the drums and the chords you play).
 
 ## Troubleshooting
 
@@ -193,3 +210,7 @@ Oxygen 49 transport CC numbers vary by firmware — if buttons don't respond, up
 - `mcp_server.log` — runtime log
 - `generated-images/` — local scratch output
 - `current.txt` — a personal working note, not project documentation
+
+---
+
+Built by [Ahmed Salman (Maan)](https://github.com/AhmSulman)

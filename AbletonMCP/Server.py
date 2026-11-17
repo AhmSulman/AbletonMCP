@@ -1,6 +1,6 @@
 """
 TCP socket server running inside Ableton.
-Protocol: newline-delimited JSON on localhost:9877
+Protocol: JSON over TCP on localhost:9877 (one object per message, no delimiter)
   receive:  {"type": "<cmd>", "params": {...}}
   send:     {"status": "ok",    "result": {...}}
           | {"status": "error", "message": "..."}

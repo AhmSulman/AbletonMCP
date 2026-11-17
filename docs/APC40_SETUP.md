@@ -30,7 +30,7 @@ APC40 pad [0,0] (note 36) — pressed
 
 The venv is already set up with dependencies:
 ```bash
-cd C:\Users\ahmed\Desktop\AbletonMCP
+cd <path-to-repo>
 .venv\Scripts\python mcp_server.py
 ```
 
@@ -47,8 +47,8 @@ Add to `mcpServers`:
 {
   "mcpServers": {
     "ableton": {
-      "command": "C:/Users/ahmed/Desktop/AbletonMCP/.venv/Scripts/python.exe",
-      "args":    ["C:/Users/ahmed/Desktop/AbletonMCP/mcp_server.py"]
+      "command": "<path-to-repo>/.venv/Scripts/python.exe",
+      "args":    ["<path-to-repo>/mcp_server.py"]
     }
   }
 }
@@ -63,8 +63,8 @@ Add to `mcpServers`:
 {
   "mcpServers": {
     "ableton": {
-      "command": "C:/Users/ahmed/Desktop/AbletonMCP/.venv/Scripts/python.exe",
-      "args":    ["C:/Users/ahmed/Desktop/AbletonMCP/mcp_server.py"]
+      "command": "<path-to-repo>/.venv/Scripts/python.exe",
+      "args":    ["<path-to-repo>/mcp_server.py"]
     }
   }
 }
@@ -270,4 +270,4 @@ AbletonMCP/
 
 **Version**: 2.0 (APC40 Mk2)  
 **Last Updated**: 2026-06-06  
-**Author**: Ahmed (Claude Code)
+**Author**: Ahmed Salman (Maan)

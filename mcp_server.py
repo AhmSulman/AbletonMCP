@@ -12,16 +12,16 @@ Add to Claude Desktop config (%APPDATA%\\Claude\\claude_desktop_config.json):
   {
     "mcpServers": {
       "ableton": {
-        "command": "C:/Users/ahmed/Desktop/AbletonMCP/.venv/Scripts/python.exe",
-        "args":    ["C:/Users/ahmed/Desktop/AbletonMCP/mcp_server.py"]
+        "command": "<path-to-repo>/.venv/Scripts/python.exe",
+        "args":    ["<path-to-repo>/mcp_server.py"]
       }
     }
   }
 
 Or for Claude Code (.claude/settings.json or via /mcp add):
   "ableton": {
-    "command": "C:/Users/ahmed/Desktop/AbletonMCP/.venv/Scripts/python.exe",
-    "args":    ["C:/Users/ahmed/Desktop/AbletonMCP/mcp_server.py"]
+    "command": "<path-to-repo>/.venv/Scripts/python.exe",
+    "args":    ["<path-to-repo>/mcp_server.py"]
   }
 """
 
